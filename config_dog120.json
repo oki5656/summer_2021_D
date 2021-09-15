@@ -1,5 +1,5 @@
 {
-  "pathDB": "../datasets/generative-dog-images/",
+  "pathDB": "../../datasets/generative-dog-images/",
   "config": {
     "maxIterAtScale": [
       21120,

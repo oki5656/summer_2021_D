@@ -155,7 +155,8 @@ class GNet(nn.Module):
         batchSize = x.size(0)
         mapping = self.mapping(self.noramlizationLayer(x))
         if self.training:
-            self.mean_w = self.gamma_avg * self.mean_w + (1-self.gamma_avg) * mapping.mean(dim=0, keepdim=True)
+            #self.mean_w = self.gamma_avg * self.mean_w + (1-self.gamma_avg) * mapping.mean(dim=0, keepdim=True)
+            self.mean_w.data = self.gamma_avg * self.mean_w.data + (1-self.gamma_avg) * mapping.mean(dim=0, keepdim=True)
 
         if self.phiTruncation < 1:
             mapping = self.mean_w + self.phiTruncation * (mapping - self.mean_w)
