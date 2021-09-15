@@ -1,0 +1,12 @@
+{
+  "pathDB": "../datasets/generative-dog-images/",
+  "config": {
+    "maxIterAtScale": [
+      96000,
+      120000,
+      120000,
+      120000
+    ]
+  },
+  "imagefolderDataset": true
+}
