@@ -59,7 +59,7 @@ class BaseGAN():
             GDPP (bool): if true activate GDPP loss https://arxiv.org/abs/1812.00068
 
         """
-
+        self.Flag=1
         if lossMode not in ['MSE', 'WGANGP', 'DCGAN', 'Logistic']:
             raise ValueError(
                 "lossMode should be one of the following : ['MSE', 'WGANGP', \
@@ -229,7 +229,12 @@ class BaseGAN():
 
         lossD.backward(retain_graph=True)
         finiteCheck(self.getOriginalD().parameters())
-        self.optimizerD.step()
+        if self.Flag==1:
+            self.optimizerD.step()
+            self.Flag=0
+        else:
+            self.Flag=1
+
         #tqdm.write("\nD_lr : "+str(self.schedulerD.get_lr()[0]) +"G_lr : "+ str(self.schedulerG.get_lr()[0]))
 
 
