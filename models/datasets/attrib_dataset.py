@@ -302,7 +302,8 @@ class AttribDataset(Dataset):
         #dataset_dir= "/content/drive/MyDrive/datasets/generative-dog-images"
         self.img_dir = os.path.join(dataset_dir, 'all-dogs')
         self.annotation_dir = os.path.join(dataset_dir, 'Annotation')
-        bndbox_file_path = os.path.join(dataset_dir, 'all-dogs-bndbox.txt')
+        #bndbox_file_path = os.path.join(dataset_dir, 'all-dogs-bndbox.txt')
+        bndbox_file_path = None
         self.transform = transform
         self.annotation_dict = dict([(dir_name[:9], (i, dir_name[10:])) for i, dir_name in enumerate(os.listdir(self.annotation_dir ))]) # {n02xxxxxx: (int: label, string: breed)}
         self.num_labels = len(self.annotation_dict) # int: num_labels
