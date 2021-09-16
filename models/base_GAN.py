@@ -122,8 +122,8 @@ class BaseGAN():
         #optimG, optimD = self.updateSolversDevice()
         #schedulerG = torch.optim.lr_scheduler.CyclicLR(optimG, base_lr=0.01, max_lr=0.1)
         #schedulerD = torch.optim.lr_scheduler.CyclicLR(optimD, base_lr=0.01, max_lr=0.1)
-        self.schedulerG = torch.optim.lr_scheduler.CyclicLR(self.optimizerG, base_lr=2*10**(-4), max_lr=8*1e-4, step_size_up=4, step_size_down=4, cycle_momentum = False)
-        self.schedulerD = torch.optim.lr_scheduler.CyclicLR(self.optimizerD, base_lr=2*10**(-4), max_lr=8*1e-4, step_size_up=4, step_size_down=4, cycle_momentum = False)
+        #self.schedulerG = torch.optim.lr_scheduler.CyclicLR(self.optimizerG, base_lr=2*10**(-4), max_lr=8*1e-4, step_size_up=4, step_size_down=4, cycle_momentum = False)
+        #self.schedulerD = torch.optim.lr_scheduler.CyclicLR(self.optimizerD, base_lr=2*10**(-4), max_lr=8*1e-4, step_size_up=4, step_size_down=4, cycle_momentum = False)
 
 
         # Logistic loss
@@ -288,8 +288,8 @@ class BaseGAN():
             avg_p.mul_(0.999).add_(p.data, alpha=0.001)
 
         # scheduler.step
-        self.schedulerG.step()
-        self.schedulerD.step()
+        #self.schedulerG.step()
+        #self.schedulerD.step()
 
         return allLosses
 
