@@ -25,7 +25,7 @@ git clone https://github.com/oki5656/summer_2021_D.git
  <br>
 
 # Usage
-1,config_dog120.jsonのpathDBを自分のデータセットのpathに書き換える  
+1, config_dog120.jsonのpathDBを自分のデータセットのpathに書き換える  
 pathDBの下の階層は以下を想定  
 -all-dogs  
 &emsp;-n02xxxxxx_nnnn.jpg  
@@ -33,17 +33,16 @@ pathDBの下の階層は以下を想定
 &emsp;-n02xxxxxx-犬種  
 &emsp;&emsp;-n02xxxxxx_nnnn  
 -all-dogs-bndbox.txt  
-
 (※[txtファイルのリンク](https://drive.google.com/file/d/1Wp1OCAjiLlLpslsvwmvAFadm1IgT04p5/view))
-<br>
+<br><br>
 
-2,学習
+2, 学習
 ```bash
 python train.py DCGAN -c config_dog120.json --restart -n dogs120 --np_vis
 ```
 <br>
 
-3,生成画像出力
+3, 生成画像出力
 ```bash
 python eval.py gen_vis_img -n dogs120 -m DCGAN
 ```
