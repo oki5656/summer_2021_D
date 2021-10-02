@@ -47,10 +47,10 @@ python train.py DCGAN -c config_dog120.json --restart -n dogs120 --np_vis
 python eval.py gen_vis_img -n dogs120 -m DCGAN
 ```
 DCGANのところを適宜[StyleGAN, ProGAN]と書き換えるとそれに応じたネットワークのパラメータが生成に使用される。
- <br>
+ <br><br>
 
 # Note
-epochの設定パス<br>
+epochや学習率の設定パス<br>
 ```bash
 models/trainer/standard_configuration/dcgan_config.py 
 ```
